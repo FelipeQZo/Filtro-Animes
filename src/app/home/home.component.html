@@ -1,0 +1,17 @@
+<h1> Lista de animes</h1>
+<div class="container">
+  <div class="input-container" >
+    <input (ngModelChange)="pesquisar($event)" [(ngModel)]="searchInput"
+     type="text"name="search" class="search-input">
+  </div>
+
+  <div class="animes-containers">
+    <div class="card-anime" *ngFor="let item of animelist">
+      <div [style.backgroundImage]="getImage(item)" class="content-img">
+        <!-- <img class="img" [src]="item.node.main_picture.medium" alt="one piece"> -->
+      </div>
+      <div class="title-card"> {{item.node.title}} </div>
+    </div>
+  </div>
+
+</div>
